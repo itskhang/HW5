@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet"href="css.css">  
+  <script src="angular.min.js"></script>
+  <script src="jquery.dataTables.js"></script>
+  <script src="app.js"></script>
+  <script src="myController.js"></script>
+
+  <title>CIS411 HW5</title>
+
+</head>
+<body>
+
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+  <div class="navbar-header">
+
+  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+  <span class="sr-only">Toggle navigation</span>
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  </button> 
+  </div>
+  <div id="navbar" class="collapse navbar-collapse">
+  <ul class="nav navbar-nav">
+  <li><a href="index.html">Welcome</a></li>
+  <li class="active"><a href="angular.html">Angular Tutorials</a></li>
+  <li><a href="introToAngular.html">Intro to Angular</a></li>
+  </li>
+  </ul>
+  </div>
+  </div>
+  </nav>
+
+  <div class="jumbotron">
+  <div class="container">
+  <h1>Angular Tutorial</h1>
+  <p><b>Various Angular Tutorials on the Web</b></p>
+  <hr>
+  <table ng-controler="myController" id="angularTutorial" class="table">
+  <thead>
+  <tr>
+    <th>URL</th>
+    <th>Title</th>
+    <th>Author</th>
+    <th>Image</th>
+  </tr>
+  </thead>
+
+  <tr ng-repeat="insert in angularTutorials">
+    <td class="url"><a href="{{insert.url}}">{{insert.url}}</a></td>
+    <td class="title">{{insert.title}}</td>
+    <td class="author">{{insert.author}}</td>
+    <td><img img ng-src="{{insert.image}}"></td>
+    </tr>
+    
+    </table>
+</div>
+</div>
+
+</body>  
+</html>
+
+
